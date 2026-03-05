@@ -12,10 +12,16 @@ interface Project {
   color: string
 }
 
+interface Task {
+  id: string
+  name: string
+  projectId: string
+}
+
 interface Column {
   id: string
   title: string
-  tasks: string[]
+  tasks: Task[]
 }
 
 function Dashboard() {
@@ -39,7 +45,7 @@ function Dashboard() {
 
       <div style={{ display: 'flex', flex: 1 }}>
         <Sidebar projects={projects} isOpen={sidebarOpen} />
-        <MainContent columns={columns} />
+<MainContent columns={columns} projects={projects} />
       </div>
     </div>
   )

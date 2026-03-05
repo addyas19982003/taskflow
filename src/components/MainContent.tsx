@@ -1,16 +1,34 @@
 import styles from './MainContent.module.css'
 
+interface Task {
+  id: string
+  name: string
+  projectId: string
+}
+
 interface Column {
   id: string
   title: string
-  tasks: string[]
+  tasks: Task[]
+}
+
+interface Project {
+  id: string
+  name: string
+  color: string
 }
 
 interface MainContentProps {
   columns: Column[]
+  projects: Project[]
 }
 
-export default function MainContent({ columns }: MainContentProps) {
+export default function MainContent({ columns, projects }: MainContentProps) {
+  const getProjectColor = (projectId: string) => {
+    const project = projects.find(p => p.id === projectId)
+    return project?.color || '#666'
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.board}>
@@ -20,9 +38,13 @@ export default function MainContent({ columns }: MainContentProps) {
               {col.title} ({col.tasks.length})
             </h3>
 
-            {col.tasks.map((task, i) => (
-              <div key={i} className={styles.card}>
-                {task}
+            {col.tasks.map((task) => (
+              <div 
+                key={task.id} 
+                className={styles.card}
+                style={{ borderLeftColor: getProjectColor(task.projectId) }}
+              >
+                {task.name}
               </div>
             ))}
           </div>

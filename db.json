@@ -12,8 +12,21 @@
   ],
 
   "columns": [
-    { "id": "todo", "title": "À Faire", "tasks": ["Maquettes UI", "Specs techniques"] },
-    { "id": "progress", "title": "En Cours", "tasks": ["API Auth", "Page Login"] },
-    { "id": "done", "title": "Terminé", "tasks": ["Setup projet", "Config ESLint"] }
+    { "id": "todo", "title": "À Faire", "tasks": [
+      { "id": "t1", "name": "Maquettes UI", "projectId": "1" },
+      { "id": "t2", "name": "Specs techniques", "projectId": "1" },
+      { "id": "t3", "name": "Design App", "projectId": "2" },
+      { "id": "t4", "name": "API Specs", "projectId": "3" }
+    ]},
+    { "id": "progress", "title": "En Cours", "tasks": [
+      { "id": "t5", "name": "API Auth", "projectId": "3" },
+      { "id": "t6", "name": "Page Login", "projectId": "1" },
+      { "id": "t7", "name": "Navigation", "projectId": "2" }
+    ]},
+    { "id": "done", "title": "Terminé", "tasks": [
+      { "id": "t8", "name": "Setup projet", "projectId": "1" },
+      { "id": "t9", "name": "Config ESLint", "projectId": "1" },
+      { "id": "t10", "name": "Init Repo", "projectId": "2" }
+    ]}
   ]
 }
