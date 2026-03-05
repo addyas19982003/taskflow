@@ -14,6 +14,12 @@
   gap: 10px;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .menuBtn {
   background: none;
   border: none;
@@ -25,6 +31,24 @@
 .logo {
   font-size: 20px;
   font-weight: bold;
+}
+
+.userName {
+  font-size: 14px;
+}
+
+.logoutBtn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .avatar {
